@@ -6,6 +6,7 @@ import Blog from "./pages/Blog";
 import Categories from "./pages/Categories";
 import Contact from "./pages/Contact";
 import AppLayout from "./components/layout/AppLayout";
+import Search from "./pages/Search";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,6 +33,10 @@ function App() {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/search",
+          element: <Search />,
         },
       ],
     },
