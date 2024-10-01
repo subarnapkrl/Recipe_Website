@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Menu Icon */}
         <div className="flex items-center justify-around space-x-2 cursor-pointer">
           {openModal && (
-            <div className="bg-green px-[60px] py-[60px] fixed top-0 left-0 w-[80vw] h-[90vh] sm:w-[25vw] sm:h-[75vh] z-[100]  transition-all duration-300">
+            <div className="bg-green px-[60px] py-[60px] fixed top-0 left-0 md:w-[50vw] md:h-[100vh] z-50 transition-all duration-300 w-[100vw] h-screen">
               {/* Categories */}
               <div>
                 <div className="flex items-center justify-between ">
@@ -44,14 +44,13 @@ const Navbar = () => {
                 <ul className="p-3 space-y-3">
                   {categories.map((list) => (
                     <li key={list.id} onClick={() => handleClick(list.path)}>
-                      <h3 className="text-h3 font-bold p-3 text-white">
+                      <h3 className="text-h3 text-left font-bold p-3 text-white">
                         {list.name}
                       </h3>
                     </li>
                   ))}
                 </ul>
               </div>
-
               {/* Links */}
               <div className="space-y-2 mt-2">
                 <h6 className="text-white shadow-md inline text-left uppercase">

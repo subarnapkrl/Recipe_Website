@@ -1,5 +1,11 @@
+import Banner from "../components/UI/Hero/Banner";
+
 const Home = () => {
-  return <div>Home Page</div>;
+  return (
+    <>
+      <Banner />
+    </>
+  );
 };
 
 export default Home;
