@@ -44,7 +44,7 @@ const Navbar = () => {
                 <ul className="p-1 md:p-3 md:space-y-3">
                   {categories.map((list) => (
                     <li key={list.id} onClick={() => handleClick(list.path)}>
-                      <h3 className="xl:text-h3 text-h4 text-left font-bold p-3 text-white">
+                      <h3 className="xl:text-h3 text-h6 text-left font-bold p-3 text-white">
                         {list.name}
                       </h3>
                     </li>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   {links.map((link) => (
                     <li key={link.id}>
                       <h4
-                        className="text-h4  p-3 text-white cursor-pointer"
+                        className="xl:text-h4 text-h5 p-3 text-white cursor-pointer"
                         onClick={() => handleClick(link.path)}
                       >
                         {link.name}
