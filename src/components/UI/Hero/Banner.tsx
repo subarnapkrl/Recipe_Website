@@ -3,6 +3,7 @@ import { useApiData } from "../../../store/store";
 import Button from "../../General/Button";
 import Carousel from "../../General/Carousel";
 import { ColorRing } from "react-loader-spinner"; // Import ColorRing
+import { useNavigate } from "react-router-dom";
 export type Recipe = {
   id: number;
   name: string;
@@ -16,6 +17,8 @@ export type Recipe = {
 const Banner = () => {
   const { response, loading, fetchData } = useApiData();
   const [slides, setSlides] = useState<Recipe[]>([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -45,6 +48,7 @@ const Banner = () => {
             btnTxt="View All Recipes"
             textcolor="blue"
             bordercolor="blue"
+            onClick={() => navigate("/categories")}
           />
         </div>
 
