@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useApiData } from "../../../store/store";
+import { RotatingSquare } from "react-loader-spinner";
 
 type Recipe = {
   mealType: string | string[];
@@ -15,7 +16,18 @@ const CategorySlider = () => {
   const [mealcard, setmealcard] = useState<MealCard[]>([]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsToShow = 4;
+  const [cardsToShow, setCardsToShow] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCardsToShow(window.innerWidth >= 900 ? 4 : 2);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -108,7 +120,17 @@ const CategorySlider = () => {
         </div>
         {/* SLider */}
         {loading ? (
-          <div className="text-center py-4">Loading...</div>
+          <div className="text-center py-4 flex items-center justify-center">
+            <RotatingSquare
+              visible={true}
+              height="100"
+              width="100"
+              color="#4fa94d"
+              ariaLabel="rotating-square-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+            />
+          </div>
         ) : (
           <div className="relative overflow-hidden">
             <div
@@ -120,7 +142,12 @@ const CategorySlider = () => {
               }}
             >
               {mealcard.map((card, index) => (
-                <div key={index} className="w-1/4 flex-shrink-0 px-2">
+                <div
+                  key={index}
+                  className={`${
+                    cardsToShow === 4 ? "w-1/4" : "w-1/2"
+                  } flex-shrink-0 px-2`}
+                >
                   <div className="relative bg-beige flex items-center flex-col">
                     <img
                       className="w-[210px] h-[220px] object-cover rounded-lg"

@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Menu Icon */}
         <div className="flex items-center justify-around space-x-2 cursor-pointer">
           {openModal && (
-            <div className="bg-green px-[60px] py-[60px] fixed top-0 left-0 md:w-[50vw] md:h-[100vh] z-50 transition-all duration-300 w-[100vw] h-screen">
+            <div className="bg-green px-[20px] py-[20px] lg:px-[60px] lg:py-[60px] fixed top-0 left-0 md:w-[35vw] md:h-[100vh] z-50 transition-all duration-300 w-[100vw] h-screen">
               {/* Categories */}
               <div>
                 <div className="flex items-center justify-between ">
@@ -41,10 +41,10 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="p-3 space-y-3">
+                <ul className="p-1 md:p-3 md:space-y-3">
                   {categories.map((list) => (
                     <li key={list.id} onClick={() => handleClick(list.path)}>
-                      <h3 className="text-h3 text-left font-bold p-3 text-white">
+                      <h3 className="xl:text-h3 text-h4 text-left font-bold p-3 text-white">
                         {list.name}
                       </h3>
                     </li>
