@@ -7,6 +7,7 @@ import Categories from "./pages/Categories";
 import Contact from "./pages/Contact";
 import AppLayout from "./components/layout/AppLayout";
 import Search from "./pages/Search";
+import CategoriesDetail from "./pages/CategoriesDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,6 +26,10 @@ function App() {
         {
           path: "/categories",
           element: <Categories />,
+        },
+        {
+          path: "/categories/:id",
+          element: <CategoriesDetail />,
         },
         {
           path: "/blog",
