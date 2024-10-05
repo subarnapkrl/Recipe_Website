@@ -9,11 +9,7 @@ const Display = () => {
       {/*  */}
       <div className="bg-blue max-w-[1440px] mx-auto  md:h-[516px] flex md:flex-row flex-col items-center justify-evenly gap-2 ">
         <div>
-          <img
-            src="/public/Image.png"
-            alt=""
-            className=" md:w-[683px] md:h-[596px]"
-          />
+          <img src="/Image.png" alt="" className=" md:w-[683px] md:h-[596px]" />
         </div>
         <div className=" flex flex-col md:items-start items-center gap-2 py-2 px-2">
           <h2 className="text-h3 text-center md:text-left text-white font-bold">
@@ -54,7 +50,7 @@ const Display = () => {
           </div>
           <div className="max-w-[477px] max-h-[606px]">
             <img
-              src="/public/Image(1).png"
+              src="/Image(1).png"
               alt=""
               className="absolute top-5 right-1 "
             />
