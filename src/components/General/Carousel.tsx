@@ -69,6 +69,7 @@ const Carousel = ({
                   {currentRecipe?.name}
                 </h2>
                 <DetailBtn
+                  fill="yellow"
                   serving={currentRecipe?.servings}
                   prep={currentRecipe?.prepTimeMinutes}
                   time={currentRecipe?.cookTimeMinutes}

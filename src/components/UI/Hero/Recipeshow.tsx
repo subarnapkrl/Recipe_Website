@@ -94,8 +94,9 @@ const Recipeshow = () => {
               <div className="mt-4 space-y-2">
                 <h3 className="font-semibold text-lg">{recipe?.name}</h3>
 
-                <div className="flex items-center gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-4 text-sm text-gray-600 border-green">
                   <DetailBtn
+                    fill="green"
                     serving={recipe?.servings}
                     prep={recipe?.prepTimeMinutes}
                     time={recipe?.cookTimeMinutes}
