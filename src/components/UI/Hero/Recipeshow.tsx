@@ -7,7 +7,7 @@ import Button from "../../General/Button";
 import DetailBtn from "../../General/DetailBtn";
 import { MutatingDots } from "react-loader-spinner";
 
-type Recipe = {
+export type Recipe = {
   id: number;
   mealType: string | string[];
   image: string;
